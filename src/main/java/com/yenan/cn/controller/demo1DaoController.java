@@ -4,7 +4,6 @@ import com.sun.net.httpserver.HttpsServer;
 import com.yenan.cn.domain.User;
 import com.yenan.cn.server.Demo1TestService;
 import org.apache.shiro.web.session.HttpServletSession;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -17,10 +16,11 @@ public class demo1DaoController {
     private Demo1TestService demo1TestService;
 
     @RequestMapping("/demo1test")
-    public User userInfo(HttpServletSession servletSession){
+    public String userInfo(String name ,String pwd){
 //        servletSession.
 //        User user = demo1TestService.findUserInfo();
         User user =new User();
-        return user;
+        System.out.println("123");
+        return "/login";
     }
 }
