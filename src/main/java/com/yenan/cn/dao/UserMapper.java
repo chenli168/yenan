@@ -1,17 +1,18 @@
 package com.yenan.cn.dao;
 
 import com.yenan.cn.domain.User;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {
-    int deleteByPrimaryKey(String userId);
+    int deleteByPrimaryKey(@Param("userId")String userId);
 
-    int insert(User record);
+    int insert(@Param("record")User record);
 
-    int insertSelective(User record);
+    int insertSelective(@Param("record")User record);
 
-    User selectByPrimaryKey(String userId);
+    User selectByPrimaryKey(@Param("userId") String userId);
 
-    int updateByPrimaryKeySelective(User record);
+    int updateByPrimaryKeySelective(@Param("record")User record);
 
-    int updateByPrimaryKey(User record);
+    int updateByPrimaryKey(@Param("record")User record);
 }

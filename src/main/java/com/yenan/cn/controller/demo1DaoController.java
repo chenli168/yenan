@@ -1,10 +1,11 @@
 package com.yenan.cn.controller;
 
-import com.sun.net.httpserver.HttpsServer;
+
 import com.yenan.cn.domain.User;
 import com.yenan.cn.server.Demo1TestService;
 import org.apache.shiro.web.session.HttpServletSession;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
@@ -16,11 +17,12 @@ public class demo1DaoController {
     private Demo1TestService demo1TestService;
 
     @RequestMapping("/demo1test")
-    public String userInfo(String name ,String pwd){
-//        servletSession.
-//        User user = demo1TestService.findUserInfo();
-        User user =new User();
-        System.out.println("123");
+    public String userInfo(Model model , String userId, String userPassword){
+        User user = demo1TestService.findUserInfo(userId);
+        model.addAttribute("userName",user.getUserName());
+       //System.out.println(userId+user.getUserName()+user.getUserAge()+user.getUserPhoneNumber());
+        model.addAttribute("userAge",user.getUserAge());
+        model.addAttribute("userPhoneNumber",user.getUserPhoneNumber());
         return "/login";
     }
 }

@@ -11,6 +11,17 @@
     <title>Title</title>
 </head>
 <body>
-123
+<table border="1px" cellspacing = “0” cellpadding = “10”>
+    <tr>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>手机号码</td>
+    </tr>
+    <tr>
+        <td>${userName}</td>
+        <td>${userAge}</td>
+        <td>${userPhoneNumber}</td>
+    </tr>
+</table>
 </body>
 </html>

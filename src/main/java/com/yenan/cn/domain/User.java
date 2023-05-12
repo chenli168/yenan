@@ -1,8 +1,5 @@
 package com.yenan.cn.domain;
 
-/**
- * @author Administrator
- */
 public class User {
     private String userId;
 
@@ -12,11 +9,14 @@ public class User {
 
     private String userPhoneNumber;
 
-    public User(String userId, String userName, Integer userAge, String userPhoneNumber) {
+    private String userPassword;
+
+    public User(String userId, String userName, Integer userAge, String userPhoneNumber, String userPassword) {
         this.userId = userId;
         this.userName = userName;
         this.userAge = userAge;
         this.userPhoneNumber = userPhoneNumber;
+        this.userPassword = userPassword;
     }
 
     public User() {
@@ -53,5 +53,13 @@ public class User {
 
     public void setUserPhoneNumber(String userPhoneNumber) {
         this.userPhoneNumber = userPhoneNumber;
+    }
+
+    public String getUserPassword() {
+        return userPassword;
+    }
+
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
     }
 }
